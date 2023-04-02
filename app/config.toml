@@ -1,0 +1,21 @@
+[server]
+host='localhost'
+port=8080
+
+[scraper]
+url='https://happymoonsemaar.jacca.com/Menu?C=view_tr_happymoonsemaar_99'
+
+[api]
+version='v1' # not implemented as the assignment URL's does not support versioning
+
+[http]
+allowed_origins='http://localhost:8080'
+allowed_methods='GET, OPTIONS'
+rate_limit=2
+rate_limit_window=1
+
+[env]
+local=true
+
+[mock]
+remote_addr="151.101.193.69:443"

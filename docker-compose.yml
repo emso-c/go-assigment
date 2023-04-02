@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  app:
+    build: ./app
+    expose:
+      - "8080"
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_PORT=${POSTGRES_PORT}
+      - DB_HOST=${POSTGRES_HOST}
+      - DB_USER=${POSTGRES_USER}
+      - DB_PASSWORD=${POSTGRES_PASSWORD}
+      - DB_NAME=${POSTGRES_DB}
+    depends_on:
+      - database
+
+  database:
+    image: postgres:13.4
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:${POSTGRES_PORT}"
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+volumes:
+  db-data:
