@@ -11,7 +11,7 @@ Kodun detaylı dökümantasyonu için `app/README.md` dosyasındaki yönergeleri
 
 - Verilerin [verilen bağlantı](https://happymoonsemaar.jacca.com/Menu?C=view_tr_happymoonsemaar_99) üzerinden çekilmesi.
 - Verilerin bir veritabanında saklanması.
-  - İstenilen veriler: `Kategori`, `Ürün`, `Açıklama`, `Fiyat`
+  - İstenilen alanlar: `Kategori`, `Ürün`, `Açıklama`, `Fiyat`
 - Verilerin `Go` programlama dili ile yazılmış bir API üzerinden çekilmesi.
 - Servisin belirli bir konfigürasyon dosyası aracılığıyla yönetilebilmesi.
 - Servisin SOLID prensiplerine uygun olması.
@@ -19,8 +19,8 @@ Kodun detaylı dökümantasyonu için `app/README.md` dosyasındaki yönergeleri
 - Servisin API Gateway aracılığıyla merkezi bir noktadan yönetilebilmesi.
 - Belirtilen endpointlerin çalışması:
     - `GET /happymoons` : Tüm ürünlerin listelenmesi.
-    - `GET /happymoons/ex={kategori1,kategori2,...}` : Belirtilen kategorilerin hariç tutularak listelenmesi.
-    - `GET /happymoons/in={kategori1,kategori2,...}` : Belirtilen kategorilerin listelenmesi.
+    - `GET /happymoons/ex={kategori,urun,...}` : Belirtilen alanların hariç tutularak listelenmesi.
+    - `GET /happymoons/in={fiyat,aciklama,...}` : Yalnızca belirtilen alanların listelenmesi.
     - `GET /happymoons/csv` : Tüm ürünlerin CSV formatında listelenmesi.
 - Servisin Dockerize edilmesi.
 
